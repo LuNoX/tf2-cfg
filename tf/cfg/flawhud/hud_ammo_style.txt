@@ -1,0 +1,1 @@
+#base ../../custom/flawhud/resource/ui/customizations/health_ammo/ammo_no_box.res 
