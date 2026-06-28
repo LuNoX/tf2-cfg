@@ -1,0 +1,176 @@
+// Bonus Health Pulse
+event HudHealthBonusPulse
+{
+//	RunEvent HudHealthBonusBox		0.0
+//	RunEvent HudHealthBonusText			0.0
+
+	RunEvent HudHealthBonusPulseLoop	0.4
+}
+
+event HudHealthBonusPulseStop
+{
+	StopEvent HudHealthBonusPulse		0.0
+	StopEvent HudHealthBonusPulseLoop	0.0
+
+//	RunEvent HudHealthStopBox			0.0
+//	RunEvent HudHealthStopText			0.0
+}
+//==================================================================================
+
+// Low Health Pulse
+event HudHealthDyingPulse
+{
+//	RunEvent HudHealthDyingBox		0.0
+//	RunEvent HudHealthDyingText			0.0
+
+	RunEvent HudHealthDyingPulseLoop	0.4
+}
+
+event HudHealthDyingPulseStop
+{
+	StopEvent HudHealthDyingPulse 		0.0
+	StopEvent HudHealthDyingPulseLoop 	0.0
+
+//	RunEvent HudHealthStopBox			0.0
+//	RunEvent HudHealthStopText			0.0
+}
+//==================================================================================
+
+//Low Ammo Pulse
+event HudLowAmmoPulse
+{
+//	RunEvent HudAmmoLowBox			0.0
+	RunEvent HudAmmoLowText				0.0
+
+	RunEvent HudLowAmmoPulseLoop		0.4
+}
+
+event HudLowAmmoPulseStop
+{
+	StopEvent HudLowAmmoPulse 			0.0
+	StopEvent HudLowAmmoPulseLoop 		0.0
+
+//	RunEvent HudAmmoStopBox			0.0
+	RunEvent HudAmmoStopText			0.0
+}
+//==================================================================================
+
+event HudMedicCharged
+{
+	Animate	ChargeMeter 				FgColor		"UberCharge"		Linear 0.0 0.1
+	Animate	ChargeMeter 				FgColor		"UberChargePulse"	Linear 0.3 0.4
+	
+	Animate	ChargeLabel 				FgColor		"UberCharge"		Linear 0.0 0.1
+	Animate	ChargeLabel 				FgColor		"UberChargePulse"	Linear 0.3 0.4
+
+	RunEvent HudMedicChargedLoop		0.6
+}
+
+event HudMedicChargedStop
+{
+	StopEvent HudMedicCharged			0.0
+	StopEvent HudMedicChargedLoop		0.0
+
+	Animate	ChargeMeter					FgColor		"UberCharge"		Linear 0.0 0.0001
+	
+	Animate	ChargeLabel					FgColor		"TanLight"			Accel 0.0 0.0
+}
+//==================================================================================
+
+// Spy Disguise
+event HudSpyDisguiseChanged
+{
+//	Animate	PlayerStatusSpyOutlineImage	Alpha		"200"				Linear 0.0 0.2
+//	Animate	PlayerStatusSpyOutlineImage	Position	"100 r145"			Linear 0.0 0.2
+//	Animate	PlayerStatusSpyOutlineImage	Size		"120 120"			Linear 0.0 0.2
+
+	RunEvent HudSpyDisguiseHide			0.7
+}
+
+event HudSpyDisguiseHide
+{
+//	Animate PlayerStatusSpyOutlineImage	Alpha		"0"					Linear 0.2 0.1
+//	Animate PlayerStatusSpyOutlineImage	Position	"0 r0"				Linear 0.0 0.2
+//	Animate PlayerStatusSpyOutlineImage	Size		"0 0"				Linear 0.0 0.2
+}
+
+//==================================================================================
+
+event CompetitiveGame_RestoreChatWindow
+{
+    // Fix stuck animations
+    RunEvent HudHealthDyingPulseStop 0.1
+    RunEvent HudHealthBonusPulseStop 0.1
+    RunEvent HudLowAmmoPulseStop 0.1
+    RunEvent HudMedicChargedStop 0.1
+}
+//==================================================================================
+
+event TrainingHudBounce
+{
+	Animate ObjectiveStatusTraining		Position	"c-160 r167"		Linear 0 0
+	Animate ObjectiveStatusTraining		Position	"c-160 r107"		Bounce 0.0 2.0
+}
+//==================================================================================
+
+event TeamStatus_PlayerDead
+{
+	SetVisible	respawntime	1	0
+}
+
+event TeamStatus_PlayerAlive
+{
+	SetVisible	respawntime	0	0.2
+}
+//==================================================================================
+
+event MenuPulse
+{
+	Animate HudMenu								Blur			"7"									Linear	0.0		0.1
+	Animate HudMenu								Blur			"2"									Deaccel	0.1		0.1
+	Animate HudMenu								Blur			"7"									Linear	0.2		0.1
+	Animate HudMenu								Blur			"2"									Deaccel	0.3		0.1
+	Animate HudMenu								Blur			"7"									Linear	0.4		0.1
+	Animate HudMenu								Blur			"2"									Deaccel	0.5		0.1
+	Animate HudMenu								Blur			"1"									Deaccel	0.6		0.4
+
+	RunEvent UberTimerHide						0.2
+}
+
+event MenuClose
+{
+	Animate HudMenu								Alpha			"0"									Linear	0.0		0.2
+	Animate HudMenu								SelectionAlpha	"0"									Linear	0.0		0.2
+	Animate HudMenu								FGColor			"Blank"								Linear	0.0		0.2
+	Animate HudMenu								MenuColor		"Blank"								Linear	0.0		0.2
+	Animate HudMenu								ItemColor		"Blank"								Linear	0.0		0.2
+
+	RunEvent UberTimer							0.0
+}
+
+event UberTimerRun
+{
+	Animate UberCounterBG						Tall			"2"									Linear	0.1		0.001
+	Animate UberCounter							BGColor			"255 0 0 255"						Linear	0.0		0.001
+	Animate UberCounter							Wide			"110"								Linear	0.0		55.0
+	Animate UberCounter							BGColor			"127 127 0 255"						Linear	40.0	0.001
+	Animate UberCounter							BGColor			"0 255 0 255"						Linear	55.0	0.001
+
+	RunEvent UberTimerHide						60.0
+}
+
+event UberTimerHide
+{
+	StopEvent UberTimerRun						0.0
+
+	Animate UberCounterBG						Tall			"0"									Linear	0.0		0.0
+	Animate UberCounter							Wide			"0"									Linear	0.0		0.0
+}
+
+event UberTimer { }
+
+//==================================================================================
+
+event CompetitiveGame_LowerChatWindow { }
+event HudTournament_MoveChatWindow { }
+event HudCartAlarmPulse{}
