@@ -1,0 +1,1 @@
+To install simply drag your tf folder into your "Team Fortress 2" directory (there should already be a /tf directory) and accept any overrides the OS might ask approval for.
