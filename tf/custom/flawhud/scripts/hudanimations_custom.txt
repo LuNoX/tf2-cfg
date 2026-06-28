@@ -1,7 +1,7 @@
 // Bonus Health Pulse
 event HudHealthBonusPulse
 {
-//	RunEvent HudHealthBonusBox		0.0
+	RunEvent HudHealthBonusBox		0.0
 //	RunEvent HudHealthBonusText			0.0
 
 	RunEvent HudHealthBonusPulseLoop	0.4
@@ -12,7 +12,7 @@ event HudHealthBonusPulseStop
 	StopEvent HudHealthBonusPulse		0.0
 	StopEvent HudHealthBonusPulseLoop	0.0
 
-//	RunEvent HudHealthStopBox			0.0
+	RunEvent HudHealthStopBox			0.0
 //	RunEvent HudHealthStopText			0.0
 }
 //==================================================================================
@@ -20,7 +20,7 @@ event HudHealthBonusPulseStop
 // Low Health Pulse
 event HudHealthDyingPulse
 {
-//	RunEvent HudHealthDyingBox		0.0
+	RunEvent HudHealthDyingBox		0.0
 //	RunEvent HudHealthDyingText			0.0
 
 	RunEvent HudHealthDyingPulseLoop	0.4
@@ -31,7 +31,7 @@ event HudHealthDyingPulseStop
 	StopEvent HudHealthDyingPulse 		0.0
 	StopEvent HudHealthDyingPulseLoop 	0.0
 
-//	RunEvent HudHealthStopBox			0.0
+	RunEvent HudHealthStopBox			0.0
 //	RunEvent HudHealthStopText			0.0
 }
 //==================================================================================
@@ -39,8 +39,8 @@ event HudHealthDyingPulseStop
 //Low Ammo Pulse
 event HudLowAmmoPulse
 {
-//	RunEvent HudAmmoLowBox			0.0
-	RunEvent HudAmmoLowText				0.0
+	RunEvent HudAmmoLowBox			0.0
+//	RunEvent HudAmmoLowText				0.0
 
 	RunEvent HudLowAmmoPulseLoop		0.4
 }
@@ -50,8 +50,8 @@ event HudLowAmmoPulseStop
 	StopEvent HudLowAmmoPulse 			0.0
 	StopEvent HudLowAmmoPulseLoop 		0.0
 
-//	RunEvent HudAmmoStopBox			0.0
-	RunEvent HudAmmoStopText			0.0
+	RunEvent HudAmmoStopBox			0.0
+//	RunEvent HudAmmoStopText			0.0
 }
 //==================================================================================
 

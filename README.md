@@ -1,1 +1,2 @@
-To install simply drag your tf folder into your "Team Fortress 2" directory (there should already be a /tf directory) and accept any overrides the OS might ask approval for.
+To install simply drag this tf folder into your "Team Fortress 2" directory (there should already be a /tf directory) and accept any overrides the OS might ask approval for.
+Then in steam set the launch options to the contents of the launch-options.txt

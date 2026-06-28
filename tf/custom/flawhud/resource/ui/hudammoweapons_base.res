@@ -27,7 +27,7 @@
 		"tall"	"43"
 		"visible"	"1"
 		"enabled"	"1"
-		"bgcolor_override"	"BGBlack"
+		"bgcolor_override"	"Transparent"
 		"PaintBackgroundType"	"2"
 	}
 	"AmmoInClip"
